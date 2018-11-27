@@ -9,16 +9,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
-@Repository
+//@Repository
 public class UserDaoImpl implements UserDao {
-    @Autowired
+    //@Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Override
     public int addUser(User user) {
         String sql="insert into user values(null,?,?,?,?,?,?)";
         return jdbcTemplate.update(sql,user.getUsername(),user.getPassword(),user.getRealname()
-                ,user.getPassword(),user.getEmial(),user.getStatus());
+                ,user.getPassword(),user.getEmail(),user.getStatus());
     }
 
     @Override
